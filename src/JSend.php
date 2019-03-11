@@ -2,7 +2,7 @@
 
 namespace RichToms\LaravelJsend;
 
-class LaravelJsend
+class JSend
 {
     // Build your next great package.
 }

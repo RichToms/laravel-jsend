@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \RichToms\LaravelJsend\Skeleton\SkeletonClass
  */
-class LaravelJsendFacade extends Facade
+class JSendFacade extends Facade
 {
     /**
      * Get the registered name of the component.
