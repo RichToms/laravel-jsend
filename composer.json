@@ -1,0 +1,54 @@
+{
+    "name": "richtoms/laravel-jsend",
+    "description": "A JSend wrapper for Laravel",
+    "keywords": [
+        "richtoms",
+        "laravel-jsend"
+    ],
+    "homepage": "https://github.com/richtoms/laravel-jsend",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Richard Toms",
+            "email": "richard.toms@hotmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RichToms\\LaravelJsend\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RichToms\\LaravelJsend\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RichToms\\LaravelJsend\\LaravelJsendServiceProvider"
+            ],
+            "aliases": {
+                "LaravelJsend": "RichToms\\LaravelJsend\\LaravelJsendFacade"
+            }
+        }
+    }
+}
