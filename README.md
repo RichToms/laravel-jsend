@@ -1,7 +1,7 @@
 # Very short description of the package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/richtoms/laravel-jsend.svg?style=flat-square)](https://packagist.org/packages/richtoms/laravel-jsend)
-[![Build Status](https://img.shields.io/travis/richtoms/laravel-jsend/master.svg?style=flat-square)](https://travis-ci.org/richtoms/laravel-jsend)
+[![Build Status](https://img.shields.io/travis/RichToms/laravel-jsend/master.svg?style=flat-square)](https://travis-ci.org/RichToms/laravel-jsend)
 [![Quality Score](https://img.shields.io/scrutinizer/g/richtoms/laravel-jsend.svg?style=flat-square)](https://scrutinizer-ci.com/g/richtoms/laravel-jsend)
 [![Total Downloads](https://img.shields.io/packagist/dt/richtoms/laravel-jsend.svg?style=flat-square)](https://packagist.org/packages/richtoms/laravel-jsend)
 
