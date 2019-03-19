@@ -12,19 +12,9 @@ class Response implements JsonSerializable
     protected $statusCode = 200;
 
     /**
-     * @var array
-     */
-    protected $headers = [];
-
-    /**
      * @var array|null
      */
     protected $data = false;
-
-    /**
-     * @var string|null
-     */
-    protected $message = null;
 
     /**
      * @var string
@@ -42,32 +32,12 @@ class Response implements JsonSerializable
     }
 
     /**
-     * @param  array  $headers
-     * @return $this
-     */
-    public function withHeaders(array $headers)
-    {
-        $this->headers = $headers;
-        return $this;
-    }
-
-    /**
      * @param  mixed  $data
      * @return $this
      */
-    public function setData($data)
+    public function withData($data)
     {
         $this->data = $this->toJSendData($data);
-        return $this;
-    }
-
-    /**
-     * @param  string  $message
-     * @return $this
-     */
-    public function withMessage($message)
-    {
-        $this->message = $message;
         return $this;
     }
 
@@ -77,14 +47,6 @@ class Response implements JsonSerializable
     public function hasData()
     {
         return $this->data !== false;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function hasMessage()
-    {
-        return !is_null($this->message);
     }
 
     /**
@@ -106,7 +68,7 @@ class Response implements JsonSerializable
     /**
      * @return array
      */
-    public function jsonSerialize()
+    public function toArray()
     {
         $response = [
             'status' => $this->getStatusText(),
@@ -115,11 +77,16 @@ class Response implements JsonSerializable
         if ($this->hasData()) {
             $response['data'] = $this->data;
         }
-        if ($this->hasMessage()) {
-            $response['message'] = $this->message;
-        }
 
         return $response;
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
     }
 
     /**
