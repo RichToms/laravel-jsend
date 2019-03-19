@@ -7,7 +7,7 @@ use JsonSerializable;
 class Response implements JsonSerializable
 {
     /**
-     * @var integer
+     * @var int
      */
     protected $statusCode = 200;
 
@@ -22,12 +22,13 @@ class Response implements JsonSerializable
     protected $statusText = 'success';
 
     /**
-     * @param  integer  $statusCode
+     * @param  int  $statusCode
      * @return $this
      */
     public function withStatusCode($statusCode)
     {
         $this->statusCode = $statusCode;
+
         return $this;
     }
 
@@ -38,11 +39,12 @@ class Response implements JsonSerializable
     public function withData($data)
     {
         $this->data = $this->toJSendData($data);
+
         return $this;
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasData()
     {
@@ -50,7 +52,7 @@ class Response implements JsonSerializable
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getStatusCode()
     {

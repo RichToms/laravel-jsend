@@ -2,9 +2,9 @@
 
 namespace RichToms\LaravelJsend;
 
+use JSendFacade as JSend;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\ServiceProvider;
-use JSendFacade as JSend;
 
 class LaravelJsendServiceProvider extends ServiceProvider
 {
