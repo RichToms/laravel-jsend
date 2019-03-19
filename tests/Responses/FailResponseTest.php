@@ -15,7 +15,7 @@ class FailResponseTest extends TestCase
 
         $this->assertTrue($response instanceof FailResponse);
     }
-    
+
     /** @test */
     public function a_fail_response_always_has_the_required_keys()
     {

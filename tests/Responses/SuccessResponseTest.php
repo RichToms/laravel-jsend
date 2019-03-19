@@ -15,7 +15,7 @@ class SuccessResponseTest extends TestCase
 
         $this->assertTrue($response instanceof SuccessResponse);
     }
-    
+
     /** @test */
     public function a_success_response_always_has_the_required_keys()
     {

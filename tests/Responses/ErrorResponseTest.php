@@ -21,7 +21,7 @@ class ErrorResponseTest extends TestCase
     {
         $response = (new JSend)->error('Testing error')->toArray();
 
-        $this->assertEquals("Testing error", $response['message']);
+        $this->assertEquals('Testing error', $response['message']);
     }
 
     /** @test */
@@ -29,7 +29,7 @@ class ErrorResponseTest extends TestCase
     {
         $response = (new JSend)->error('Testing error')->toArray();
 
-        $this->assertEquals("error", $response['status']);
+        $this->assertEquals('error', $response['status']);
     }
 
     /** @test */

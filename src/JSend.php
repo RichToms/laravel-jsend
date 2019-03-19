@@ -6,7 +6,7 @@ class JSend
 {
     /**
      * @param  mixed  $data
-     * @param  integer  $statusCode
+     * @param  int  $statusCode
      */
     public function build($data, $statusCode = 200)
     {
@@ -17,7 +17,7 @@ class JSend
 
     /**
      * @param  string  $message
-     * @param  integer  $statusCode
+     * @param  int  $statusCode
      */
     public function error($message, $statusCode = 500, $code = null, $data = null)
     {
@@ -28,7 +28,7 @@ class JSend
 
     /**
      * @param  array  $data
-     * @param  integer  $statusCode
+     * @param  int  $statusCode
      */
     public function fail($data, $statusCode = 400)
     {
@@ -38,7 +38,7 @@ class JSend
     }
 
     /**
-     * @param  integer  $statusCode
+     * @param  int  $statusCode
      */
     protected function getResponseHandler($statusCode)
     {
@@ -55,16 +55,16 @@ class JSend
 
     protected function getErrorResponseHandler()
     {
-        return (new Responses\ErrorResponse);
+        return new Responses\ErrorResponse;
     }
 
     protected function getFailResponseHandler()
     {
-        return (new Responses\FailResponse);
+        return new Responses\FailResponse;
     }
 
     protected function getSuccessResponseHandler()
     {
-        return (new Responses\SuccessResponse);
+        return new Responses\SuccessResponse;
     }
 }

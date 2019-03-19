@@ -20,29 +20,30 @@ class ErrorResponse extends Response
     protected $message = null;
 
     /**
-     * @param  integer  $code
+     * @param  int  $code
      * @return $this
      */
     public function withCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasMessage()
     {
-        return !is_null($this->message);
+        return ! is_null($this->message);
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasCode()
     {
-        return !is_null($this->code);
+        return ! is_null($this->code);
     }
 
     /**
@@ -52,6 +53,7 @@ class ErrorResponse extends Response
     public function withMessage($message)
     {
         $this->message = $message;
+
         return $this;
     }
 
