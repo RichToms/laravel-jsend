@@ -16,7 +16,11 @@ class LaravelJsendServiceProvider extends ServiceProvider
     public function boot()
     {
         ResponseFactory::macro('jsend', function ($data = [], $statusCode = 200, $headers = []) {
-            return JSend::build($data, $statusCode, $headers);
+            return response()->json(
+                JSend::build($data, $statusCode), 
+                $statusCode, 
+                $headers
+            );
         });
     }
 
