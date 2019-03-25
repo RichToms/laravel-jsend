@@ -86,7 +86,7 @@ class SuccessResponse extends Response
     {
         return $this->toSlug(Str::plural((function ($value) {
             if (is_object($value)) {
-                return get_class($value);
+                return class_basename($value);
             }
 
             return $value['type'] ?? "object";
