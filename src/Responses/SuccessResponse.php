@@ -30,23 +30,23 @@ class SuccessResponse extends Response
             );
         }
 
-        if (!is_object($this->data)) {
+        if (! is_object($this->data)) {
             return ['object' => $this->data];
         }
 
         // If the class name contains Resource
-        if (stristr($className = class_basename($this->data), "Resource") !== false) {
+        if (stristr($className = class_basename($this->data), 'Resource') !== false) {
             return [
                 Str::plural(
-                    $this->toSlug(explode("Resource", $className)[0]),
-                    stristr($className, "Collection") !== false ? 0 : 1
-                ) => $this->data->toArray()
+                    $this->toSlug(explode('Resource', $className)[0]),
+                    stristr($className, 'Collection') !== false ? 0 : 1
+                ) => $this->data->toArray(),
             ];
         }
 
         // If the data is not an object and is not a Laravel Resource, return the class name and the value
         return [
-            $this->toSlug($className) => $this->data
+            $this->toSlug($className) => $this->data,
         ];
     }
 
@@ -89,7 +89,7 @@ class SuccessResponse extends Response
                 return get_class($value);
             }
 
-            return $value['type'] ?? "object";
+            return $value['type'] ?? 'object';
         })($value)));
     }
 
