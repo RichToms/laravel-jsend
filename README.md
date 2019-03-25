@@ -18,11 +18,13 @@ composer require richtoms/laravel-jsend
 ## Usage
 
 ``` php
-    // Using the facade
-    return JSend::build($data, $statusCode, $headers);
+use RichToms\LaravelJSend\JSendFacade as JSend;
 
-    // Using the response macro
-    return response()->jsend($data, $statusCode, $headers);
+// Using the facade
+return JSend::build($data, $statusCode, $headers);
+
+// Using the response macro
+return response()->jsend($data, $statusCode, $headers);
 ```
 
 ### Testing
