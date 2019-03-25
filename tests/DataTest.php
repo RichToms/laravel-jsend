@@ -11,7 +11,7 @@ class DataTest extends TestCase
     public function it_returns_the_associative_array_that_it_is_given()
     {
         $response = (new JSend)->build($baseData = [
-            'hello' => ['world']
+            'hello' => ['world'],
         ])->toArray()['data'];
 
         $this->assertEquals($baseData, $response);
@@ -21,7 +21,7 @@ class DataTest extends TestCase
     public function it_determines_a_slug_from_many_of_the_same_objects_in_the_array()
     {
         $response = (new JSend)->build($baseData = [
-            new Test, new Test, new Test
+            new Test, new Test, new Test,
         ])->toArray()['data'];
 
         $this->assertEquals(['tests'], array_keys($response));
@@ -31,7 +31,7 @@ class DataTest extends TestCase
     public function it_determines_slugs_from_multiple_objects_in_the_array()
     {
         $response = (new JSend)->build($baseData = [
-            new Test, new AnotherTest, new Test
+            new Test, new AnotherTest, new Test,
         ])->toArray()['data'];
 
         $this->assertEquals(['tests', 'another_tests'], array_keys($response));
@@ -75,18 +75,24 @@ class DataTest extends TestCase
 }
 
 // Test classes
-class Test {}
-class AnotherTest {}
+class Test
+{
+}
+class AnotherTest
+{
+}
 
 // Resource classes
-class TestResource {
+class TestResource
+{
     public function toArray()
     {
         return [];
     }
 }
 
-class TestResourceCollection {
+class TestResourceCollection
+{
     public function toArray()
     {
         return [];
