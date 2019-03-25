@@ -70,6 +70,14 @@ class Response implements JsonSerializable
     /**
      * @return array
      */
+    protected function getResponseData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @return array
+     */
     public function toArray()
     {
         $response = [
@@ -77,7 +85,7 @@ class Response implements JsonSerializable
         ];
 
         if ($this->hasData()) {
-            $response['data'] = $this->data;
+            $response['data'] = $this->getResponseData();
         }
 
         return $response;
