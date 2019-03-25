@@ -1,4 +1,4 @@
-# Very short description of the package
+# Laravel JSend Responses
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/richtoms/laravel-jsend.svg?style=flat-square)](https://packagist.org/packages/richtoms/laravel-jsend)
 [![Build Status](https://img.shields.io/travis/RichToms/laravel-jsend/master.svg?style=flat-square)](https://travis-ci.org/RichToms/laravel-jsend)
