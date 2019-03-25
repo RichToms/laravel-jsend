@@ -11,7 +11,7 @@ class SuccessResponseTest extends TestCase
     /** @test */
     public function a_success_response_can_be_built()
     {
-        $response = (new JSend)->build(['errors' => []]);
+        $response = (new JSend)->build(['values' => []]);
 
         $this->assertTrue($response instanceof SuccessResponse);
     }
@@ -21,7 +21,7 @@ class SuccessResponseTest extends TestCase
     {
         $required = ['status', 'data'];
 
-        $response = (new JSend)->build(['errors' => []])->toArray();
+        $response = (new JSend)->build(['values' => []])->toArray();
 
         foreach ($required as $key) {
             $this->assertTrue(array_key_exists($key, $response));
@@ -31,7 +31,7 @@ class SuccessResponseTest extends TestCase
     /** @test */
     public function a_success_response_has_the_success_status()
     {
-        $response = (new JSend)->build(['errors' => []])->toArray();
+        $response = (new JSend)->build(['values' => []])->toArray();
 
         $this->assertEquals('success', $response['status']);
     }
@@ -39,7 +39,7 @@ class SuccessResponseTest extends TestCase
     /** @test */
     public function a_success_response_given_an_array_returns_the_same_array()
     {
-        $response = (new JSend)->build($data = ['errors' => []])->toArray();
+        $response = (new JSend)->build($data = ['values' => []])->toArray();
 
         $this->assertEquals($response['data'], $data);
     }

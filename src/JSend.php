@@ -7,6 +7,7 @@ class JSend
     /**
      * @param  mixed  $data
      * @param  int  $statusCode
+     * @return $this
      */
     public function build($data, $statusCode = 200)
     {
@@ -18,6 +19,7 @@ class JSend
     /**
      * @param  string  $message
      * @param  int  $statusCode
+     * @return $this
      */
     public function error($message, $statusCode = 500, $code = null, $data = null)
     {
@@ -29,6 +31,7 @@ class JSend
     /**
      * @param  array  $data
      * @param  int  $statusCode
+     * @return $this
      */
     public function fail($data, $statusCode = 400)
     {
@@ -39,6 +42,7 @@ class JSend
 
     /**
      * @param  int  $statusCode
+     * @return $this
      */
     protected function getResponseHandler($statusCode)
     {
@@ -53,16 +57,25 @@ class JSend
         return $this->getSuccessResponseHandler();
     }
 
+    /**
+     * @return \RichToms\LaravelJSend\Responses\Response
+     */
     protected function getErrorResponseHandler()
     {
         return new Responses\ErrorResponse;
     }
 
+    /**
+     * @return \RichToms\LaravelJSend\Responses\Response
+     */
     protected function getFailResponseHandler()
     {
         return new Responses\FailResponse;
     }
 
+    /**
+     * @return \RichToms\LaravelJSend\Responses\Response
+     */
     protected function getSuccessResponseHandler()
     {
         return new Responses\SuccessResponse;
